@@ -55,10 +55,10 @@ export default function Page() {
               <p>Tax ID: {item.tax_id_no}</p>
               <p>Postal Address: {item.postal_address}</p>
 
-              <button className=" bg-red-300 px-4 rounded-lg py-2 text-blue-800 mr-3 hover:scale-105">
+              <button className=" bg-red-300 px-2 rounded-lg py-2 text-blue-800 mr-3 hover:scale-105">
                 Show less
               </button>
-              <button className="bg-green-500 px-4 rounded-lg py-2 text-gray-100 hover:scale-105">
+              <button className="bg-green-500 px-2 rounded-lg py-2 text-gray-100 hover:scale-105">
                 Show more
               </button>
             </div>
