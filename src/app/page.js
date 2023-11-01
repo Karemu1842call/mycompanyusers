@@ -1,10 +1,21 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import Modal from "./Modal";
 
 export default function Page() {
   const [data, setData] = useState([]);
-  const [showCount, setShowCount] = useState(5); // Number of items to show initially
+  const [selectedData, setSelectedData] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const handleShowMore = (data) => {
+    setSelectedData(data);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+  
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -17,19 +28,11 @@ export default function Page() {
     };
 
     fetchData();
-  }, []); // The empty dependency array ensures that this effect runs once after the initial render
-
+  }, []); 
   if (!data || data.length === 0) {
     return <div>No data available.</div>;
   }
-
-  const handleShowMore = () => {
-    setShowCount(showCount + 5); // Increase the number of items to show by 5
-  };
-
-  const handleShowLess = () => {
-    setShowCount(5); // Reset the number of items to show to the initial value
-  };
+  
 
   return (
     <div className="box-container">
@@ -44,6 +47,7 @@ export default function Page() {
         {data.map((item) => (
           <div class="card hover:scale-105" key={item.id}>
             <div className="hover:scale-105 text-gray-800 ">
+              <h1 className="font-bold text-center text-2xl mb-3 underline">User Details</h1>
               <h2>
                 Name: {item.user.first_name} {item.user.last_name}
               </h2>
@@ -55,18 +59,18 @@ export default function Page() {
               <p>Tax ID: {item.tax_id_no}</p>
               <p>Postal Address: {item.postal_address}</p>
 
-              <button className=" bg-red-300 px-2 rounded-lg py-2 text-blue-800 mr-3 hover:scale-105">
-                Show less
-              </button>
-              <button className="bg-green-500 px-2 rounded-lg py-2 text-gray-100 hover:scale-105">
+              
+              <button
+                onClick={() => handleShowMore(item)}
+                className="bg-green-500 px-2 rounded-lg py-2 text-gray-100 hover:scale-105 ml-10 active:scale-100"
+              >
                 Show more
               </button>
             </div>
-
-  
           </div>
         ))}
       </div>
+      <Modal isOpen={isModalOpen} onClose={handleCloseModal} data={selectedData}/>
     </div>
   );
 }

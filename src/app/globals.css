@@ -4,7 +4,6 @@
 
 
 
-/* CSS for the outer container */
 .box-container {
   max-width: auto;
   margin: 0 auto;
@@ -14,7 +13,6 @@
 
 
 
-/* CSS for the container of cards */
 .card-container {
   display: flex;
   flex-wrap: wrap;
@@ -23,7 +21,6 @@
   background-color: rgb(8, 8, 146);
 }
 
-/* CSS for individual cards */
 .card {
   background-color: #00bcd4;
   color: white;
@@ -34,13 +31,11 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* CSS for headings inside the cards */
 .card h2 {
   font-size: 1.2em;
   margin-bottom: 10px;
 }
 
-/* CSS for paragraphs inside the cards */
 .card p {
   margin-bottom: 8px;
 }
