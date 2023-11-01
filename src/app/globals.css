@@ -2,26 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+
+
+/* CSS for the outer container */
+.box-container {
+  max-width: auto;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgb(19, 19, 115);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+
+
+/* CSS for the container of cards */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 20px;
+  background-color: rgb(8, 8, 146);
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+/* CSS for individual cards */
+.card {
+  background-color: #00bcd4;
+  color: white;
+  width: 250px;
+  margin: 10px;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* CSS for headings inside the cards */
+.card h2 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+/* CSS for paragraphs inside the cards */
+.card p {
+  margin-bottom: 8px;
+}
+
+.head-text{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
