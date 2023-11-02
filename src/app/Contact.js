@@ -51,22 +51,7 @@ const Contact = () => {
 return (
         <section className='contact' id='contact'>
           <div className='contact-text'>
-            <h2>Contact Me</h2>
-            <h4>Let's Collaborate Together</h4>
-            
-            <div className='contact-list'>
-              <li>
-                <a href='#'>Nairobi - Kenya</a>
-              </li>
-              <li>
-                <a href='mailto: calvinkioko91.com'>
-                  victorkinoti03@gmail.com
-                </a>
-              </li>
-              <li>
-                <a href='#'>+254746913209</a>
-              </li>
-            </div>
+           
             <div className='contact-icons'>
               <a
                 href='https://www.linkedin.com/in/v-ctor-kinoti-89128a242'
