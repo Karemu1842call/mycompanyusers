@@ -69,10 +69,11 @@ function Loginform({ setIsLoggedIn }) {
           </form>
           <div className="parent-container mt-8">
             <div className="text-yellow-300 font-bold ">
-              <h2 className="text-2xl ">
-                Don&apos;t have an account?
+              <div className="text-2xl ">
+                {/* eslint-disable-next-line react/no-unescaped-entities */}
+                Don't have an account?
                 <button className="ml-4 hover:text-green-500 ">Signup</button>
-              </h2>
+              </div>
             </div>
           </div>
         </div>
