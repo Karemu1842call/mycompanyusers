@@ -9,6 +9,7 @@
   margin: 0 auto;
   padding: 20px;
   background-color: rgb(19, 19, 115);
+  display: flex;
 }
 
 
@@ -24,7 +25,7 @@
 .card {
   background-color: #00bcd4;
   color: white;
-  width: 250px;
+  width: auto;
   margin: 10px;
   padding: 15px;
   border-radius: 8px;
@@ -72,3 +73,31 @@ p {
   font-size: 18px;
   color: #3498db;
 }
+.navbar_elements a{
+  text-decoration: none;
+  font-size: 1.25rem;
+  color:#026995;
+}
+.nav{
+  flex: 0 0 200px;
+}
+
+.active, .navbar_elements :hover{
+  font-weight:400;
+  color:#32b3ea
+  
+}
+.active{
+  color: #fff !important;
+  background:#026995 !important;
+  border-radius: 3px;
+  padding-top: 6px;
+  align-items: center;
+}
+
+.sideBar{
+  border-right: #c0e5f4;
+   }
+   .beside {
+    flex: 1;
+   }
