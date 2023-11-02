@@ -37,6 +37,7 @@ const Modal = ({ isOpen, onClose, data }) => {
         <ul>
           {entities.map((entity, index) => (
             <li key={index}>
+              <h1 className="font-bold text-3xl">Sacco Data</h1>
               <h2>Name: {entity.name}</h2>
               <p>Physical Address: {entity.physical_address}</p>
               <p>Status: {entity.status}</p>
@@ -45,7 +46,12 @@ const Modal = ({ isOpen, onClose, data }) => {
             </li>
           ))}
         </ul>
-        {/* ...other components */}
+        <button
+          className="bg-red-300 px-2 rounded-lg py-2 text-blue-800 mr-3 hover:scale-105 mt-4"
+          onClick={onClose}
+        >
+          Close
+        </button>
       </div>
     </div>
   );

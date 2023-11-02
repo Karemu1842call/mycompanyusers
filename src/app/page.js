@@ -3,8 +3,8 @@ import React, { useState, useEffect } from "react";
 import Modal from "./Modal";
 import Loading from "./Loading";
 import Loginform from "./Loginform";
-import Hook from "./Hook";
 import Navbar from "./Navbar";
+import Contact from "./Contact";
 
 export default function Page() {
   const [data, setData] = useState([]);
@@ -45,7 +45,7 @@ export default function Page() {
   }
 
   return (
-    <>
+    <div className="wrap">
       <div className="box-container py-20 px-10">
         <div>
           {" "}
@@ -113,6 +113,7 @@ export default function Page() {
           />
         </div>
       </div>
-    </>
+      <Contact/>
+    </div>
   );
 }

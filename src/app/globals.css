@@ -2,17 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 .box-container {
   max-width: auto;
   margin: 0 auto;
   padding: 20px;
-  background-color: rgb(19, 19, 115);
   display: flex;
 }
-
-
+.wrap {
+  background-color: rgb(19, 19, 115);
+}
 
 .card-container {
   display: flex;
@@ -41,7 +39,7 @@
   margin-bottom: 8px;
 }
 
-.head-text{
+.head-text {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .loading-container {
@@ -51,7 +49,6 @@
   justify-content: center;
   height: 100vh;
   background-color: rgb(7, 34, 60);
-  
 }
 
 .loader {
@@ -65,39 +62,43 @@
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 p {
   font-size: 18px;
   color: #3498db;
 }
-.navbar_elements a{
+.navbar_elements a {
   text-decoration: none;
   font-size: 1.25rem;
-  color:#026995;
+  color: #026995;
 }
-.nav{
+.nav {
   flex: 0 0 200px;
 }
 
-.active, .navbar_elements :hover{
-  font-weight:400;
-  color:#32b3ea
-  
+.active,
+.navbar_elements :hover {
+  font-weight: 400;
+  color: #32b3ea;
 }
-.active{
+.active {
   color: #fff !important;
-  background:#026995 !important;
+  background: #026995 !important;
   border-radius: 3px;
   padding-top: 6px;
   align-items: center;
 }
 
-.sideBar{
+.sideBar {
   border-right: #c0e5f4;
-   }
-   .beside {
-    flex: 1;
-   }
+}
+.beside {
+  flex: 1;
+}
