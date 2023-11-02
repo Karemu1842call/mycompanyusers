@@ -10,7 +10,7 @@ export default function Loading() {
         </h1>
       </div>
       <div className="loader"></div>
-      <p>Loading...</p>
+      <p className="font-bold text-2xl"> Loading...</p>
     </div>
   );
 }

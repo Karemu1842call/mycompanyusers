@@ -2,11 +2,13 @@
 import React, { useState, useEffect } from "react";
 import Modal from "./Modal";
 import Loading from "./Loading";
+import Loginform from "./Loginform";
 
 export default function Page() {
   const [data, setData] = useState([]);
   const [selectedData, setSelectedData] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false); 
 
   const handleShowMore = (data) => {
     setSelectedData(data);
@@ -30,8 +32,14 @@ export default function Page() {
 
     fetchData();
   }, []); 
+
+
+   if (!isLoggedIn) {
+    return <Loginform setIsLoggedIn={setIsLoggedIn} />;
+  }
+
   if (!data || data.length === 0) {
-    return <Loading/>;
+    return <Loading />;
   }
   
 
