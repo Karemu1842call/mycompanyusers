@@ -7,7 +7,7 @@ const Modal = ({ isOpen, onClose, data }) => {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50">
-      <div className="modal-container bg-orange-300 p-8 rounded-lg shadow-lg">
+      <div className="modal-container bg-lime-300 p-8 rounded-lg shadow-lg">
         <h2 className="text-2xl font-bold mb-4">User Details</h2>
         <div className=" font-bold text-lime-800">
           <h2>
