@@ -1,16 +1,15 @@
 "use client";
 import React, { useState } from "react";
+
 function Loginform({ setIsLoggedIn }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-
   const tempSubmit = (e) => {
     e.preventDefault();
-    console.log("Form submitted!"); 
+    console.log("Form submitted!");
     setIsLoggedIn(true);
   };
-  
 
   return (
     <>
@@ -71,7 +70,7 @@ function Loginform({ setIsLoggedIn }) {
           <div className="parent-container mt-8">
             <div className="text-yellow-300 font-bold ">
               <h2 className="text-2xl ">
-                Don't have an account?
+                Don&apos;t have an account?
                 <button className="ml-4 hover:text-green-500 ">Signup</button>
               </h2>
             </div>
