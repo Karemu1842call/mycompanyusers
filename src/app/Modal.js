@@ -108,7 +108,6 @@ const Modal = ({ isOpen, onClose, data }) => {
                     </span>
                   </h3>
                   <h3>Email: {entity.email}</h3>
-                  <img src={entity.logo} alt={`Logo for ${entity.name}`} />
                 </li>
               )}
             </div>

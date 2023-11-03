@@ -34,7 +34,7 @@ export default function Page() {
     };
 
     fetchData();
-  }, []);
+  }, [data]);
 
   if (!isLoggedIn) {
     return <Loginform setIsLoggedIn={setIsLoggedIn} />;
