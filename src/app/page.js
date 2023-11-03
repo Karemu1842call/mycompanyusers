@@ -70,7 +70,6 @@ export default function Page() {
                   <h1 className="font-bold text-center text-2xl mb-3 underline text-blue-800">
                     User Details
                   </h1>
-                  <img src={users} alt="" />
                   <div className="flex flex-col items-start mb-4">
                     <p className="text-stone-900 font-bold">
                       <span className="font-semibold">Name:</span>{" "}
