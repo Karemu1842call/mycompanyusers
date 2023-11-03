@@ -263,7 +263,6 @@ form textarea {
   z-index: 1;
 }
 
-/* Links inside the dropdown */
 .dropdown-content a  {
   color: black;
   padding: 12px 16px;
@@ -271,6 +270,4 @@ form textarea {
   text-decoration: none;
 }
 
-/* Change color of dropdown links on hover */
-/* Show the dropdown menu on hover */
 
