@@ -31,7 +31,9 @@ const Modal = ({ isOpen, onClose, data }) => {
         key={data.id}
       >
         <aside className="flex">
-          <h2 className="text-2xl font-bold mb-4">User Details</h2>
+          <h2 className="text-2xl font-bold mb-4 text-stone-900 font-extrabold">
+            User Details
+          </h2>
           <button
             className="ml-60 bg-red-500 py-2 px-2 rounded-lg text-blue-800 hover:scale-105"
             onClick={onClose}
@@ -42,43 +44,84 @@ const Modal = ({ isOpen, onClose, data }) => {
         <div className="font-bold text-lime-800">
           <button
             onClick={togglePersonalData}
-            className="bg-green-400 px-5 py-3 rounded-lg text-green-900 font-bold hover:scale-105 active:scale-100"
+            className="bg-emerald-400 px-5 py-3 rounded-lg text-green-900 font-bold hover:scale-105 active:scale-100"
           >
             Personal Details
           </button>
           {showPdata && (
-            <div>
+            <div className="text-violet-800">
               <h2>
-                Name: {data.user.first_name} {data.user.last_name}
+                <span className="font-bold text-black mr-2">Name: </span>{" "}
+                {data.user.first_name} {data.user.last_name}
               </h2>
-              <h2>Username: {data.user.username}</h2>
-              <h2>Personal ID: {data.personal_id}</h2>
-              <h2>Phone Number: {data.phone_no}</h2>
-              <h2>Gender: {data.gender}</h2>
-              <h2>Marital Status: {data.marital_status}</h2>
-              <h2>Date of Birth: {data.dob}</h2>
-              <h2>Postal Address: {data.postal_address}</h2>
+              <h2>
+                <span className="font-bold text-black mr-2">Username: </span>{" "}
+                {data.user.username}
+              </h2>
+              <h2>
+                <span className="font-bold text-black mr-2">Personal ID:</span>{" "}
+                {data.personal_id}
+              </h2>
+              <h2>
+                <span className="font-bold text-black mr-2">
+                  Phone Number:{" "}
+                </span>{" "}
+                {data.phone_no}
+              </h2>
+              <h2>
+                <span className="font-bold text-black mr-2">Gender: </span>{" "}
+                {data.gender}
+              </h2>
+              <h2>
+                <span className="font-bold text-black mr-2">
+                  Marital Status:{" "}
+                </span>{" "}
+                {data.marital_status}
+              </h2>
+              <h2>
+                <span className="font-bold text-black mr-2">
+                  Date of Birth:{" "}
+                </span>{" "}
+                {data.dob}
+              </h2>
+              <h2>
+                <span className="font-bold text-black mr-2">
+                  Postal Address:{" "}
+                </span>{" "}
+                {data.postal_address}
+              </h2>
             </div>
           )}
           <br />
           <button
             onClick={toggleIncomeData}
-            className="bg-green-400 px-9 py-3 rounded-lg text-green-900 font-bold hover:scale-105 active:scale-100 mt-5"
+            className="bg-emerald-400 px-9 py-3 rounded-lg text-green-900 font-bold hover:scale-105 active:scale-100 mt-5"
           >
             Income Data
           </button>
           {showIncomeData && (
-            <div>
-              <div>
-                <h2>Tax ID: {data.tax_id_no}</h2>
-                <h2>Sacco Id:{data.sacco_id}</h2>
-                <h2>Location_Id: {data.member_location_id}</h2>
-                <h2>Source Id: {data.income_source_id}</h2>
-                <h2>Monthly Contribution: {data.monthly_contribution}</h2>
-                <h2>Payment Method: {data.remittance_method}</h2>
-                <h2>Status: {data.status}</h2>
-                <h2>{data.email}</h2>
-              </div>
+            <div className="text-violet-800">
+              <h2>
+                <span className="font-bold text-black mr-2">Tax ID: </span>
+                {data.tax_id_no}
+              </h2>
+              <h2>
+                <span className="font-bold text-black mr-2">
+                  Monthly Contribution:{" "}
+                </span>
+                {data.monthly_contribution}
+              </h2>
+              <h2>
+                <span className="font-bold text-black mr-2">
+                  Payment Method:{" "}
+                </span>
+                {data.remittance_method}
+              </h2>
+              <h2>
+                <span className="font-bold text-black mr-2">Status: </span>
+                {data.status}
+              </h2>
+              <h2>{data.email}</h2>
             </div>
           )}
         </div>
@@ -87,27 +130,33 @@ const Modal = ({ isOpen, onClose, data }) => {
             <div key={entity.id} className="dropdown">
               <button
                 onClick={toggleSaccoData}
-                className="bg-green-400 px-9 py-3 rounded-lg text-green-900 font-bold hover:scale-105 active:scale-100 mt-5"
+                className="bg-emerald-400 px-9 py-3 rounded-lg text-green-900 font-bold hover:scale-105 active:scale-100 mt-5"
               >
                 Sacco Data
               </button>
               {showSaccoData && (
-                <li className="text-black" key={index}>
-                  <h2 className="text-3xl">
-                    <span className="font-bold text-2xl text-center ml-20">
-                      Affiliated Sacco.
-                    </span>
-                    <br />
+                <li className="text-violet-800 font-bold" key={index}>
+                  <h2 className="">
+                    <span className="font-bold text-black  mr-2">Sacco Name:</span>
+
                     {entity.name}
                   </h2>
-                  <h3>Physical Address: {entity.physical_address}</h3>
                   <h3>
-                    Status:{" "}
-                    <span className="text-green-500 font-bold">
+                    <span className="font-bold text-black mr-2">
+                      Physical Address:{" "}
+                    </span>
+                    {entity.physical_address}
+                  </h3>
+                  <h3>
+                    <span className="font-bold text-black mr-2">Status: </span>
+
+                    <span className="text-lime-900 font-bold">
                       {entity.status}
                     </span>
                   </h3>
-                  <h3><span className="font-bold">Email:</span> {entity.email}</h3>
+                  <h3>
+                    <span className="font-bold text-black mr-2">Email:</span> {entity.email}
+                  </h3>
                   <img src={entity.logo} alt={`Logo for ${entity.name}`} />
                 </li>
               )}
