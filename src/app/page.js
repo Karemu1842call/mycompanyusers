@@ -5,7 +5,6 @@ import Loading from "./Loading";
 import Loginform from "./Loginform";
 import Navbar from "./Navbar";
 import Contact from "./Contact";
-import users from "./assets/myuser.png"
 
 export default function Page() {
   const [data, setData] = useState([]);
