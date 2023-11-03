@@ -49,7 +49,7 @@ const Modal = ({ isOpen, onClose, data }) => {
             Personal Details
           </button>
           {showPdata && (
-            <div className="text-violet-800">
+            <div className="text-violet-800 mt-4">
               <h2>
                 <span className="font-bold text-black mr-2">Name: </span>{" "}
                 {data.user.first_name} {data.user.last_name}
@@ -100,7 +100,7 @@ const Modal = ({ isOpen, onClose, data }) => {
             Income Data
           </button>
           {showIncomeData && (
-            <div className="text-violet-800">
+            <div className="text-violet-800 mt-4">
               <h2>
                 <span className="font-bold text-black mr-2">Tax ID: </span>
                 {data.tax_id_no}
@@ -135,9 +135,11 @@ const Modal = ({ isOpen, onClose, data }) => {
                 Sacco Data
               </button>
               {showSaccoData && (
-                <li className="text-violet-800 font-bold" key={index}>
+                <li className="text-violet-800 font-bold mt-4" key={index}>
                   <h2 className="">
-                    <span className="font-bold text-black  mr-2">Sacco Name:</span>
+                    <span className="font-bold text-black  mr-2">
+                      Sacco Name:
+                    </span>
 
                     {entity.name}
                   </h2>
@@ -147,17 +149,16 @@ const Modal = ({ isOpen, onClose, data }) => {
                     </span>
                     {entity.physical_address}
                   </h3>
-                  <h3>
+                  <h3 className="mb-6">
                     <span className="font-bold text-black mr-2">Status: </span>
 
-                    <span className="text-lime-900 font-bold">
+                    <span className="text-lime-900 font-bold ">
                       {entity.status}
                     </span>
                   </h3>
-                  <h3>
-                    <span className="font-bold text-black mr-2">Email:</span> {entity.email}
-                  </h3>
-                  <img src={entity.logo} alt={`Logo for ${entity.name}`} />
+                  <div className="mt-6">
+                    <img src={entity.logo} alt={`Logo for ${entity.name}`} />
+                  </div>
                 </li>
               )}
             </div>
