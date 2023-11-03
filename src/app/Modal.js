@@ -41,7 +41,7 @@ const Modal = ({ isOpen, onClose, data }) => {
             Personal Details{" "}
           </button>
           {showPdata && (
-            <div key={data.user_id}>
+            <div key={data.index}>
               <h2>
                 Name: {data.user.first_name} {data.user.last_name}
               </h2>
@@ -62,7 +62,7 @@ const Modal = ({ isOpen, onClose, data }) => {
             Income Data{" "}
           </button>
           {incomeData && (
-            <div key={data.user_id}>
+            <div key={data.index}>
               <h2>Tax ID: {data.tax_id_no}</h2>
               <h2>Sacco Id:{data.sacco_id}</h2>
               <h2>Location_Id: {data.member_location_id}</h2>
