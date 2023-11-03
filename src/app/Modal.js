@@ -84,7 +84,7 @@ const Modal = ({ isOpen, onClose, data }) => {
         </div>
         <ul>
           {entities.map((entity, index) => (
-            <div key={index} className="dropdown">
+            <div key={entity.id} className="dropdown">
               <button
                 onClick={toggleSaccoData}
                 className="bg-green-400 px-5 rounded-lg text-green-900 font-bold hover:scale-105 active:scale-100 mt-5"
