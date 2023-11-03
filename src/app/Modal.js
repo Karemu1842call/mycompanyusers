@@ -42,7 +42,7 @@ const Modal = ({ isOpen, onClose, data }) => {
         <div className="font-bold text-lime-800">
           <button
             onClick={togglePersonalData}
-            className="bg-green-400 px-5 rounded-lg text-green-900 font-bold hover:scale-105 active:scale-100"
+            className="bg-green-400 px-5 py-3 rounded-lg text-green-900 font-bold hover:scale-105 active:scale-100"
           >
             Personal Details
           </button>
@@ -63,7 +63,7 @@ const Modal = ({ isOpen, onClose, data }) => {
           <br />
           <button
             onClick={toggleIncomeData}
-            className="bg-green-400 px-5 rounded-lg text-green-900 font-bold hover:scale-105 active:scale-100 mt-5"
+            className="bg-green-400 px-9 py-3 rounded-lg text-green-900 font-bold hover:scale-105 active:scale-100 mt-5"
           >
             Income Data
           </button>
@@ -87,7 +87,7 @@ const Modal = ({ isOpen, onClose, data }) => {
             <div key={entity.id} className="dropdown">
               <button
                 onClick={toggleSaccoData}
-                className="bg-green-400 px-5 rounded-lg text-green-900 font-bold hover:scale-105 active:scale-100 mt-5"
+                className="bg-green-400 px-9 py-3 rounded-lg text-green-900 font-bold hover:scale-105 active:scale-100 mt-5"
               >
                 Sacco Data
               </button>
@@ -107,7 +107,7 @@ const Modal = ({ isOpen, onClose, data }) => {
                       {entity.status}
                     </span>
                   </h3>
-                  <h3>Email: {entity.email}</h3>
+                  <h3><span className="font-bold">Email:</span> {entity.email}</h3>
                   <img src={entity.logo} alt={`Logo for ${entity.name}`} />
                 </li>
               )}
