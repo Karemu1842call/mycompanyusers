@@ -5,6 +5,7 @@ import Loading from "./Loading";
 import Loginform from "./Loginform";
 import Navbar from "./Navbar";
 import Contact from "./Contact";
+import users from "./assets/myuser.png"
 
 export default function Page() {
   const [data, setData] = useState([]);
@@ -66,10 +67,11 @@ export default function Page() {
           <div className="card-container">
             {data.map((item) => (
               <div className="card hover:scale-105" key={item.id}>
-                <div className="p-4 border border-gray-300 rounded-lg">
+                <div className="p-4  rounded-lg">
                   <h1 className="font-bold text-center text-2xl mb-3 underline text-blue-800">
                     User Details
                   </h1>
+                  <img src={users} alt="" />
                   <div className="flex flex-col items-start mb-4">
                     <p className="text-stone-900 font-bold">
                       <span className="font-semibold">Name:</span>{" "}
