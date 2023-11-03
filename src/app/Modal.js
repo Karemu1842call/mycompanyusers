@@ -1,24 +1,28 @@
 import React, { useState } from "react";
+import Image from 'next/image';
 
 const Modal = ({ isOpen, onClose, data }) => {
   const [showSaccoData, setShowSaccoData] = useState(false);
   const [showPdata, setShowPdata] = useState(false);
-  const [incomeData, setIncomaData] = useState(false);
+  const [showIncomeData, setShowIncomeData] = useState(false);
+
   if (!isOpen || !data || !data.user || !data.user.entities) {
     return null;
   }
 
   const { user } = data;
-
   const entities = user.entities;
-  const showsaccodetails = () => {
+
+  const toggleSaccoData = () => {
     setShowSaccoData(!showSaccoData);
   };
-  const showpdetails = () => {
+
+  const togglePersonalData = () => {
     setShowPdata(!showPdata);
   };
-  const showincomedata = () => {
-    setIncomaData(!incomeData);
+
+  const toggleIncomeData = () => {
+    setShowIncomeData(!showIncomeData);
   };
 
   return (
@@ -27,21 +31,21 @@ const Modal = ({ isOpen, onClose, data }) => {
         <aside className="flex">
           <h2 className="text-2xl font-bold mb-4">User Details</h2>
           <button
-            className="ml-60 bg-red-500 py-2 px-2 rounded-lg text-blue-800  hover:scale-105 "
+            className="ml-60 bg-red-500 py-2 px-2 rounded-lg text-blue-800 hover:scale-105"
             onClick={onClose}
           >
             X
           </button>
         </aside>
-        <div className=" font-bold text-lime-800">
+        <div className="font-bold text-lime-800">
           <button
-            onClick={showpdetails}
-            className="bg-green-400 px-5 rounded-lg text-green-900 text-bold hover:scale-105 active:scale-100"
+            onClick={togglePersonalData}
+            className="bg-green-400 px-5 rounded-lg text-green-900 font-bold hover:scale-105 active:scale-100"
           >
-            Personal Details{" "}
+            Personal Details
           </button>
           {showPdata && (
-            <div key={data.index}>
+              <div key={data.index}>
               <h2>
                 Name: {data.user.first_name} {data.user.last_name}
               </h2>
@@ -56,13 +60,14 @@ const Modal = ({ isOpen, onClose, data }) => {
           )}
           <br />
           <button
-            onClick={showincomedata}
-            className="bg-green-400 px-5 rounded-lg text-green-900 text-bold hover:scale-105 active:scale-100 mt-5"
+            onClick={toggleIncomeData}
+            className="bg-green-400 px-5 rounded-lg text-green-900 font-bold hover:scale-105 active:scale-100 mt-5"
           >
-            Income Data{" "}
+            Income Data
           </button>
-          {incomeData && (
-            <div key={data.index}>
+          {showIncomeData && (
+            <div>
+              <div key={data.index}>
               <h2>Tax ID: {data.tax_id_no}</h2>
               <h2>Sacco Id:{data.sacco_id}</h2>
               <h2>Location_Id: {data.member_location_id}</h2>
@@ -72,35 +77,28 @@ const Modal = ({ isOpen, onClose, data }) => {
               <h2>Status: {data.status}</h2>
               <h2>{data.email}</h2>
             </div>
+            </div>
           )}
         </div>
         <ul>
           {entities.map((entity, index) => (
-            <div className="dropdown">
+            <div key={index} className="dropdown">
               <button
-                onClick={showsaccodetails}
-                className="bg-green-400 px-5 rounded-lg text-green-900 text-bold hover:scale-105 active:scale-100 font-bold mt-5"
+                onClick={toggleSaccoData}
+                className="bg-green-400 px-5 rounded-lg text-green-900 font-bold hover:scale-105 active:scale-100 mt-5"
               >
                 Sacco Data
               </button>
               {showSaccoData && (
                 <li className="text-black" key={index}>
                   <h2 className="text-3xl">
-                    <span className="font-bold text-2xl text-center ml-20">
-                      Affiliated Sacco.
-                    </span>{" "}
+                    <span className="font-bold text-2xl text-center ml-20">Affiliated Sacco.</span>
                     <br />
                     {entity.name}
                   </h2>
                   <h3>Physical Address: {entity.physical_address}</h3>
-                  <h3>
-                    Status:{" "}
-                    <span className="text-green-500 font-bold">
-                      {entity.status}
-                    </span>
-                  </h3>
+                  <h3>Status: <span className="text-green-500 font-bold">{entity.status}</span></h3>
                   <h3>Email: {entity.email}</h3>
-
                   <img src={entity.logo} alt={`Logo for ${entity.name}`} />
                 </li>
               )}
