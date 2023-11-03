@@ -38,6 +38,10 @@
 .card p {
   margin-bottom: 8px;
 }
+.modal-container{
+  height: 10cm;
+  overflow-y: auto;
+}
 
 .head-text {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -246,4 +250,27 @@ form textarea {
     grid-template-columns: 1fr;
   }
 }
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a  {
+  color: black;
+  padding: 12px 16px;
+  display: block;
+  text-decoration: none;
+}
+
+/* Change color of dropdown links on hover */
+/* Show the dropdown menu on hover */
 
