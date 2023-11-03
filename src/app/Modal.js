@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Image from 'next/image';
 
 const Modal = ({ isOpen, onClose, data }) => {
   const [showSaccoData, setShowSaccoData] = useState(false);
@@ -27,7 +26,10 @@ const Modal = ({ isOpen, onClose, data }) => {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50">
-      <div className="modal-container bg-lime-300 p-8 rounded-lg shadow-lg">
+      <div
+        className="modal-container bg-lime-300 p-8 rounded-lg shadow-lg"
+        key={data.user_id}
+      >
         <aside className="flex">
           <h2 className="text-2xl font-bold mb-4">User Details</h2>
           <button
@@ -45,7 +47,7 @@ const Modal = ({ isOpen, onClose, data }) => {
             Personal Details
           </button>
           {showPdata && (
-              <div key={data.index}>
+            <div>
               <h2>
                 Name: {data.user.first_name} {data.user.last_name}
               </h2>
@@ -67,16 +69,16 @@ const Modal = ({ isOpen, onClose, data }) => {
           </button>
           {showIncomeData && (
             <div>
-              <div key={data.index}>
-              <h2>Tax ID: {data.tax_id_no}</h2>
-              <h2>Sacco Id:{data.sacco_id}</h2>
-              <h2>Location_Id: {data.member_location_id}</h2>
-              <h2>Source Id: {data.income_source_id}</h2>
-              <h2>Monthly Contribution: {data.monthly_contribution}</h2>
-              <h2>Payment Method: {data.remittance_method}</h2>
-              <h2>Status: {data.status}</h2>
-              <h2>{data.email}</h2>
-            </div>
+              <div>
+                <h2>Tax ID: {data.tax_id_no}</h2>
+                <h2>Sacco Id:{data.sacco_id}</h2>
+                <h2>Location_Id: {data.member_location_id}</h2>
+                <h2>Source Id: {data.income_source_id}</h2>
+                <h2>Monthly Contribution: {data.monthly_contribution}</h2>
+                <h2>Payment Method: {data.remittance_method}</h2>
+                <h2>Status: {data.status}</h2>
+                <h2>{data.email}</h2>
+              </div>
             </div>
           )}
         </div>
@@ -92,12 +94,19 @@ const Modal = ({ isOpen, onClose, data }) => {
               {showSaccoData && (
                 <li className="text-black" key={index}>
                   <h2 className="text-3xl">
-                    <span className="font-bold text-2xl text-center ml-20">Affiliated Sacco.</span>
+                    <span className="font-bold text-2xl text-center ml-20">
+                      Affiliated Sacco.
+                    </span>
                     <br />
                     {entity.name}
                   </h2>
                   <h3>Physical Address: {entity.physical_address}</h3>
-                  <h3>Status: <span className="text-green-500 font-bold">{entity.status}</span></h3>
+                  <h3>
+                    Status:{" "}
+                    <span className="text-green-500 font-bold">
+                      {entity.status}
+                    </span>
+                  </h3>
                   <h3>Email: {entity.email}</h3>
                   <img src={entity.logo} alt={`Logo for ${entity.name}`} />
                 </li>
